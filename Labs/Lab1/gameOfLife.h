@@ -25,10 +25,11 @@ Should create structs and populate the array
 void initCells(Cell* board[][10], int boardSize);
 
 /*
-Function to read the board from a file given fileName
+Function to read the board from a file
+Prompt for the file to read inside of the function
 Structure of file should consist of 10 lines of 0 or 1 to indicate cell state
 */
-void readBoard(Cell* board[][10], int boardSize, string fileName);
+void readBoard(Cell* board[][10], int boardSize);
 
 /*
 Function to print out all cells to cout

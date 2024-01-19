@@ -7,13 +7,12 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     int stage = 0;
-    string fileName = "";
     bool boardChanged = true;
     size_t boardSize = 10;
     Cell* board[10][10];
 
     initCells(board, boardSize);
-    readBoard(board, boardSize, fileName);
+    readBoard(board, boardSize);
 
     while(boardChanged) {
         clearScreen();
