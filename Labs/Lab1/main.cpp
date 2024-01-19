@@ -20,7 +20,6 @@ int main(int argc, char* argv[])
         cout << "Stage: " << stage << endl;
 
         printCells(board, boardSize);
-        findNumNeighbors(board, boardSize);
         boardChanged = updateCellState(board, boardSize);
 
         cin.get();

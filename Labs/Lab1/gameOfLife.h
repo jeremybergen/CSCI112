@@ -39,7 +39,7 @@ void printCells(Cell* board[][10], int boardSize);
 Function to count the number of live neighbors for each cell.
 Must use the x, y position stored with each cell to determine which neighbors they have
 */
-void findNumNeighbors(Cell* board[][10], int boardSize);
+void findNumNeighbors(Cell* board[][10], int boardSize, Cell* curCell);
 
 /*
 Function to update each cell's state based on number of neighbors
