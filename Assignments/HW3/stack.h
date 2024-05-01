@@ -8,7 +8,7 @@ using namespace std;
 class Stack
 {
     private:
-        Node<double> *top;
+        Node<double> *_top;
         size_t stackSize;
 
     public:
