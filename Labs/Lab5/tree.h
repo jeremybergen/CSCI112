@@ -11,7 +11,7 @@ private:
     Node<T1> *searchData(Node<T1> *, T1);
     Node<T1> *removeData(Node<T1> *, T1);
     Node<T1> *minVal(Node<T1> *);
-    void BST<T1>::destroyTree(Node<T1>* root);
+    void destroyTree(Node<T1>* root);
 
 public:
     void insert(T1);
