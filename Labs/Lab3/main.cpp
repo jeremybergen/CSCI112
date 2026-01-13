@@ -46,8 +46,15 @@ void tests()
     ansFrac = testFrac3 - testFrac4;
     assert(ansFrac == fractions::Fraction(59, 63));
     ansFrac = testFrac3 * testFrac4;
-    assert(ansFrac == fractions::Fraction(-10, 63));
+    assert((ansFrac == fractions::Fraction(-10, 63) || ansFrac == fractions::Fraction(10, -63)));
     ansFrac = testFrac3 / testFrac4;
-    assert(ansFrac == fractions::Fraction(45, -14));
+    assert((ansFrac == fractions::Fraction(45, -14) || ansFrac == fractions::Fraction(-45, 14)));
+
+    fractions::Fraction testFrac5(2, 3);
+    fractions::Fraction testFrac6(7, 31);
+    fractions::Fraction testFrac7(-4, 9);
+    assert(testFrac5 == fractions::Fraction::simplify(fractions::Fraction(12, 18)));
+    assert(testFrac6 == fractions::Fraction::simplify(fractions::Fraction(35, 155)));
+    assert((testFrac7 == fractions::Fraction::simplify(fractions::Fraction(-20, 45)) || testFrac7 == fractions::Fraction::simplify(fractions::Fraction(20, -45))));
     cout << "All test cases passed" << endl;
 }

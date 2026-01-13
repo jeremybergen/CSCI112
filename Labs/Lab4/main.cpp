@@ -43,20 +43,39 @@ int main(int argc, char* argv[])
 void test()
 {
     List<int> testList1;
+    List<int> testList2;
     size_t listSize = 10;
     for(size_t i = 0; i < listSize; i++)
     {
         testList1.push_back(i*42);
         assert(testList1.size() == i + 1);
     }
+    
+    for(size_t i = 0; i < listSize; i++)
+    {
+        testList2.push_back(i*42);
+    }
+
     assert(testList1.empty() == false);
     assert(testList1.size() == 10);
+
+    testList1.push_front(42);
+    assert((size_t)testList1.front() == 42);
+    assert((size_t)testList1.back() == 378);
+    assert(testList1.size() == 11);
+    assert((size_t)testList1.pop_front() == 42);
+    assert((size_t)testList1.pop_back() == 378);
+    assert(testList1.size() == 9);
+    testList1.push_back(378);
+    assert(testList1 == testList2);
+
     for(size_t i = 0; i < listSize; i++)
     {
         assert((size_t)testList1.pop_front() == i*42);
         assert(testList1.size() == listSize - i - 1);
     }
     assert(testList1.empty() == true);
+    assert(!(testList1 == testList2));
 
     cout << "All test cases passed" << endl;
 }

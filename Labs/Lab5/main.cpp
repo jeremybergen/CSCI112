@@ -73,6 +73,10 @@ void test()
     myTree->inOrder();
     string test1 = buffer.str();
     buffer.str(string());
+    myTree->remove(37);
+    myTree->inOrder();
+    string test1Remove = buffer.str();
+    buffer.str(string());
     
     BST<int>* myTree2 = new BST<int>();
     for(int num : numbers2)
@@ -81,6 +85,10 @@ void test()
     }
     myTree2->inOrder();
     string test2 = buffer.str();
+    buffer.str(string());
+    myTree2->remove(41);
+    myTree2->inOrder();
+    string test2Remove = buffer.str();
     buffer.str(string());
 
     BST<int>* myTree3 = new BST<int>();
@@ -91,12 +99,19 @@ void test()
     myTree3->inOrder();
     string test3 = buffer.str();
     buffer.str(string());
+    myTree3->remove(10);
+    myTree3->inOrder();
+    string test3Remove = buffer.str();
+    buffer.str(string());
     cout.rdbuf(backup);
 
 
     assert(test1 == "8 25 27 30 37 39 67 74 87 95 ");
+    assert(test1Remove == "8 25 27 30 39 67 74 87 95 ");
     assert(test2 == "12 31 32 35 41 51 59 77 80 83 ");
+    assert(test2Remove == "12 31 32 35 51 59 77 80 83 ");
     assert(test3 == "10 16 19 39 47 52 64 70 84 92 ");
+    assert(test3Remove == "16 19 39 47 52 64 70 84 92 ");
     cout << "All test cases passed" << endl;
     delete myTree;
     delete myTree2;
