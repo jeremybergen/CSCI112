@@ -24,7 +24,7 @@ class BST
 
 // Constructor
 template <class T1>
-BST()
+BST<T1>::BST()
 {
 }
 
