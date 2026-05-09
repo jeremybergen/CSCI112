@@ -18,8 +18,15 @@ class BST
     bool search(T1);
     void remove(T1);
     void increment(T1);
+    BST();
     ~BST();
 };
+
+// Constructor
+template <class T1>
+BST()
+{
+}
 
 // Destructor, should check if root exists and then delete it. Each node will handle deleting its leaf nodes.
 template <class T1>
